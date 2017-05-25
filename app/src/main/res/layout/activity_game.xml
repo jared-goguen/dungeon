@@ -3,7 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0099cc"
+<<<<<<< HEAD
     tools:context="com.domain.dungeon.engine.GameActivity">
+=======
+    tools:context="com.domain.dungeon.GameActivity">
+>>>>>>> 539b0014fb4f4e2be4fe22aeadd6dc677231484d
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
