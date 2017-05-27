@@ -10,11 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-<<<<<<< HEAD
-            android:name=".engine.GameActivity"
-=======
             android:name=".GameActivity"
->>>>>>> 539b0014fb4f4e2be4fe22aeadd6dc677231484d
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme" >

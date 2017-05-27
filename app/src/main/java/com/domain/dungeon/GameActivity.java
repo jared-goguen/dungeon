@@ -5,22 +5,12 @@ import android.os.Bundle;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Color;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import com.domain.dungeon.map.Map;
-import com.domain.dungeon.map.Tile;
 
-import android.util.Log;
-
-import java.util.ArrayList;
+import com.domain.dungeon.engine.Camera;
+import com.domain.dungeon.engine.Game;
+import com.domain.dungeon.map.Area;
 
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
 public class GameActivity extends AppCompatActivity implements SurfaceHolder.Callback {
 
     SurfaceView surfaceView;
@@ -41,20 +31,10 @@ public class GameActivity extends AppCompatActivity implements SurfaceHolder.Cal
     public void surfaceCreated(SurfaceHolder holder) {
         Canvas canvas = holder.lockCanvas(null);
 
-        Map map = new Map(5, 5);
-
-
-        Tile.bindResources(this);
-
-        int w, h;
-        for (ArrayList<Tile> row : map.tiles) {
-            for (Tile tile : row) {
-                Bitmap bitmap = tile.getBitmap();
-                w = tile.w * 200;
-                h = tile.h * 200;
-                canvas.drawBitmap(bitmap, w, h, null);
-            }
-        }
+        Game game = new Game();
+        Area area = game.getArea();
+        Camera camera = new Camera(area);
+        camera.draw(canvas);
 
         holder.unlockCanvasAndPost(canvas);
 
